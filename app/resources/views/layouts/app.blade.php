@@ -21,7 +21,8 @@
 @yield('content')
 
 @include('partials.footer')
-<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="js/library/jquery-1.11.0.min.js"></script>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend/js/library/jquery-1.11.0.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('/frontend/js/library/bootstrap.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('/frontend/js/library/jquery.owl.carousel.js')}}"></script>
 <script type="text/javascript" src="{{asset('/frontend/js/library/jquery.appear.min.js')}}"></script>

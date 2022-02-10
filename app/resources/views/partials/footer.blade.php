@@ -5,8 +5,8 @@
                     
                     <div class="col-md-3">
                         <div class="widget megacourse">
-                            <h3 class="md">MegaCourse</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
+                            <h3 class="md">TMC INSTITUTE</h3>
+                            <p>TMC INSTITUTE was formed in 2016 and has been operating regionally and internationally right from its inception.</p>
                             <a href="#" class="mc-btn btn-style-1">Get started</a>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                                         <div class="image-thumb">
                                             <img src="images/team-13.jpg" alt="">
                                         </div>
-                                        <span>How to have a good Boyfriend in college?</span>
+                                        <span>TMC launches new epayment application</span>
                                     </a>
                                 </li>
                                 <li>
@@ -28,7 +28,7 @@
                                         <div class="image-thumb">
                                             <img src="images/team-13.jpg" alt="">
                                         </div>
-                                        <span>How to have a good Boyfriend in college?</span>
+                                        <span>Join our latest TMC Institute forum</span>
                                     </a>
                                 </li>
                             </ul>
@@ -55,7 +55,7 @@
                             <div class="inner">
                                 <div class="letter-heading">
                                     <h3 class="md">News letter</h3>
-                                    <p>Don’t miss a course sale! Join our network today and keep it up!</p>
+                                    <p>Don’t miss a course! Join our network today and keep it up!</p>
                                 </div>
                                 <div class="letter">
                                     <form>
@@ -75,20 +75,22 @@
         <div class="second-footer">
             <div class="container">
                 <div class="contact">
-                    <div class="email">
-                        <i class="icon md-email"></i>
-                        <a href="#"><span class="__cf_email__" data-cfemail="ec8f83999e9f89ac81898b8d889e999c8d80c28f8381">[email&#160;protected]</span></a>
+                    
+                    <div class="phone">
+                        <i class="fa fa-mobile"></i>
+                        <span>+44-7466588324</span>
                     </div>
                     <div class="phone">
                         <i class="fa fa-mobile"></i>
-                        <span>+84 989 999 888</span>
+                        <span>01-7001770, 09153414314</span>
                     </div>
-                    <div class="address">
-                        <i class="fa fa-map-marker"></i>
-                        <span>Maecenas sodales, nisl eget</span>
+                    
+                     <div class="email">
+                        <i class="icon md-email"></i>
+                        <span>enquiries@tmcinstitute.com</span>
                     </div>
                 </div>
-                <p class="copyright">Copyright © 2014 Megadrupal. All rights reserved.</p>
+                <p class="copyright">Copyright © {{Date('Y')}}. All rights reserved.</p>
             </div>
         </div>
     </footer>
