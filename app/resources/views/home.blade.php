@@ -147,34 +147,6 @@
     
     
     
-    <!-- SECTION 2 -->
-    <section id="mc-section-2" class="mc-section-2 section">
-        <div class="awe-parallax bg-section1-demo"></div>
-        <div class="overlay-color-1"></div>
-        <div class="container">
-            <div class="section-2-content">
-                <div class="row">
-                    
-                    <div class="col-md-5">
-                        <div class="ct">
-                            <h2 class="big">Learning online is easier than ever before</h2>
-                            <p class="mc-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                            <a href="#" class="mc-btn btn-style-3">See how it work</a>
-                        </div>
-                    </div>
-    
-                    <div class="col-md-7">
-                        <div class="image">
-                            <img src="images/image.png" alt="">
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- END / SECTION 2 -->
-    
     
     <!-- SECTION 3 -->
     <section id="mc-section-3" class="mc-section-3 section">
