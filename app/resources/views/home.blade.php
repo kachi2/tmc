@@ -90,17 +90,14 @@
     
         </div>
     </section>
-    
-
       <section id="mc-section-1" class="mc-section-1 section">
         <div class="container">
             <div class="row">
-                
                 <div class="col-md-5">
                     <div class="mc-section-1-content-1"> 
-                        <h2 class="big">Online And Offline Training Course Management</h2>
-                        <p class="mc-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        <a href="#" class="mc-btn btn-style-1">About us</a>
+                        <h2 class="big">Course Categories</h2>
+                        <p class="mc-text">We are the leading and specialist provider of specialized corporate training including Governance, Risk & Compliance, Financial Crime, and Leadership training focused on cultivating the right attitude and skills in your teams.</p>
+            
                     </div>
                 </div>
     
@@ -109,32 +106,32 @@
                         <div class="col-sm-6">
                             <div class="featured-item">
                                 <i class="icon icon-featured-1"></i>
-                                <h4 class="title-box text-uppercase">CLEAN AND EASY</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam  tincidunt ut laoreet</p>
+                                <h4 class="title-box text-uppercase">Corporate Governance</h4>
+                                <p>Intermediate Credit Analysis and Management</p>
                             </div>
                         </div>
     
                         <div class="col-sm-6">
                             <div class="featured-item">
                                 <i class="icon icon-featured-2"></i>
-                                <h4 class="title-box text-uppercase">TEACH AS YOU CAN</h4>
-                                <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</p>
+                                <h4 class="title-box text-uppercase">Financial Crime Prevention</h4>
+                                <p>Know Your Customer Specialization</p>
                             </div>
                         </div>
     
                         <div class="col-sm-6">
                             <div class="featured-item">
                                 <i class="icon icon-featured-3"></i>
-                                <h4 class="title-box text-uppercase">COMMUNITY SUPPORT</h4>
-                                <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
+                                <h4 class="title-box text-uppercase">Insurance Courses</h4>
+                                <p>Compliance for Insurance</p>
                             </div>
                         </div>
     
                         <div class="col-sm-6">
                             <div class="featured-item">
                                 <i class="icon icon-featured-4"></i>
-                                <h4 class="title-box text-uppercase">TRACKING PERFORMANCE</h4>
-                                <p> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit</p>
+                                <h4 class="title-box text-uppercase">Risk Management</h4>
+                                <p>Compliance Risk Management</p>
                             </div>
                         </div>
                     </div>
