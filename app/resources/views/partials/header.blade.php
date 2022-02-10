@@ -16,7 +16,7 @@
         <div class="container">
 
             <!-- LOGO -->
-            <div class="logo"><a href="index-2.html"><img src="images/logo.png" alt=""></a></div>
+            <div class="logo"><a href="{{route('index')}}"><img src="{{asset('/frontend/images/logo.jpg')}}" width="80px" height="20px"alt=""></a></div>
             <!-- END / LOGO -->
 
             <!-- NAVIGATION -->
