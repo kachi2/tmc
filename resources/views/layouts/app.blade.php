@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Google font -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- Css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/frontend/css/library/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/frontend/css/library/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/frontend/css/library/owl.carousel.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/frontend/css/md-font.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/frontend/css/style.css')}}">
+      <title>@if(isset($title)) {{$title}} @else  TMC Institute @endif</title>
+</head>
+@include('partials.header')
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+@yield('content')
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
-</html>
+@include('partials.footer')
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="js/library/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="{{asset('/frontend/js/library/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/frontend/js/library/jquery.owl.carousel.js')}}"></script>
+<script type="text/javascript" src="{{asset('/frontend/js/library/jquery.appear.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/frontend/js/library/perfect-scrollbar.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/frontend/js/library/jquery.easing.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/frontend/js/scripts.js')}}"></script>
+</body>
