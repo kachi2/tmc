@@ -14,11 +14,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 
 Route::get('/index', [HomeController::class, 'Index'])->name('index');
+Route::get('/', [HomeController::class, 'Index'])->name('index');
 
 
 

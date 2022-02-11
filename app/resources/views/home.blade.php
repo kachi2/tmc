@@ -141,10 +141,6 @@
         </div>
     </section>
     <!-- END / SECTION 1 -->
-    
-    
-    
-    
     <!-- SECTION 3 -->
     <section id="mc-section-3" class="mc-section-3 section">
         <div class="container">
@@ -153,7 +149,9 @@
                 <h4 class="title-box text-uppercase">FEATURE COURSE</h4>
                 <a href="categories.html" class="all-course mc-btn btn-style-1">View all</a>
                 <div class="row">
-                    <div class="feature-slider">
+               
+                 <div class="feature-slider">
+                  @foreach ($course as $cc)
                         <div class="mc-item mc-item-1">
                             <div class="image-heading">
                                 <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
@@ -165,24 +163,14 @@
                                 </div>
                                 <h4><a href="course-intro.html">The Complete Digital Photography Course Amazon Top Seller</a></h4>
                                 <div class="name-author">
-                                    By <a href="#">Name of Mr or Mrs</a>
+                                     <a href="#">View Course Details</a>
                                 </div>
                             </div>
                             <div class="ft-item">
-                                <div class="rating">
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#"></a>
-                                    <a href="#"></a>
-                                </div>
+                                
                                 <div class="view-info">
-                                    <i class="icon md-users"></i>
+                                    <i class="fa fa-eye"></i>
                                     2568
-                                </div>
-                                <div class="comment-info">
-                                    <i class="icon md-comment"></i>
-                                    25
                                 </div>
                                 <div class="price">
                                     $190
@@ -190,150 +178,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mc-item mc-item-1">
-                            <div class="image-heading">
-                                <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
-                            </div>
-                            <div class="meta-categories"><a href="#">Web design</a></div>
-                            <div class="content-item">
-                                <div class="image-author">
-                                    <img src="images/avatar-1.jpg" alt="">
-                                </div>
-                                <h4><a href="course-intro.html">The Complete Digital Photography Course Amazon Top Seller</a></h4>
-                                <div class="name-author">
-                                    <span>By <a href="#">Name of Mr or Mrs</a></span>
-                                </div>
-                            </div>
-                            <div class="ft-item">
-                                <div class="rating">
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#"></a>
-                                    <a href="#"></a>
-                                </div>
-                                <div class="view-info">
-                                    <i class="icon md-users"></i>
-                                    2568
-                                </div>
-                                <div class="comment-info">
-                                    <i class="icon md-comment"></i>
-                                    25
-                                </div>
-                                <div class="price">
-                                    Free
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mc-item mc-item-1">
-                            <div class="image-heading">
-                                <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
-                            </div>
-                            <div class="meta-categories"><a href="#">Web design</a></div>
-                            <div class="content-item">
-                                <div class="image-author">
-                                    <img src="images/avatar-1.jpg" alt="">
-                                </div>
-                                <h4><a href="course-intro.html">The Complete Digital Photography Course Amazon Top Seller</a></h4>
-                                <div class="name-author">
-                                    <span>By <a href="#">Name of Mr or Mrs</a></span>
-                                </div>
-                            </div>
-                            <div class="ft-item">
-                                <div class="rating">
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#"></a>
-                                    <a href="#"></a>
-                                </div>
-                                <div class="view-info">
-                                    <i class="icon md-users"></i>
-                                    2568
-                                </div>
-                                <div class="comment-info">
-                                    <i class="icon md-comment"></i>
-                                    25
-                                </div>
-                                <div class="price">
-                                    $190
-                                    <span class="price-old">$134</span>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="mc-item mc-item-1">
-                            <div class="image-heading">
-                                <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
-                            </div>
-                            <div class="meta-categories"><a href="#">Web design</a></div>
-                            <div class="content-item">
-                                <div class="image-author">
-                                    <img src="images/avatar-1.jpg" alt="">
-                                </div>
-                                <h4><a href="course-intro.html">The Complete Digital Photography Course Amazon Top Seller</a></h4>
-                                <div class="name-author">
-                                    <span>By <a href="#">Name of Mr or Mrs</a></span>
-                                </div>
-                            </div>
-                            <div class="ft-item">
-                                <div class="rating">
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#"></a>
-                                    <a href="#"></a>
-                                </div>
-                                <div class="view-info">
-                                    <i class="icon md-users"></i>
-                                    2568
-                                </div>
-                                <div class="comment-info">
-                                    <i class="icon md-comment"></i>
-                                    25
-                                </div>
-                                <div class="price">
-                                    $190
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div class="mc-item mc-item-1">
-                            <div class="image-heading">
-                                <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
-                            </div>
-                            <div class="meta-categories"><a href="#">Web design</a></div>
-                            <div class="content-item">
-                                <div class="image-author">
-                                    <img src="images/avatar-1.jpg" alt="">
-                                </div>
-                                <h4><a href="course-intro.html">The Complete Digital Photography Course Amazon Top Seller</a></h4>
-                                <div class="name-author">
-                                    <span>By <a href="#">Name of Mr or Mrs</a></span>
-                                </div>
-                            </div>
-                            <div class="ft-item">
-                                <div class="rating">
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#" class="active"></a>
-                                    <a href="#"></a>
-                                    <a href="#"></a>
-                                </div>
-                                <div class="view-info">
-                                    <i class="icon md-users"></i>
-                                    2568
-                                </div>
-                                <div class="comment-info">
-                                    <i class="icon md-comment"></i>
-                                    25
-                                </div>
-                                <div class="price">
-                                    $190
-                                </div>
-                            </div>
-                        </div>
+                          @endforeach
                     </div>
+               
                 </div>
             </div>
             <!-- END / FEATURE -->

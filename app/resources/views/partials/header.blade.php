@@ -33,19 +33,9 @@
                     <li class="current-menu-item"><a href="index-2.html">Home</a></li>
                     <li class="categories.html"><a href="index-2.html">Courses</a></li>
                     <li class="categories.html"><a href="index-2.html">Snatika</a></li>
-                    <li><a href="categories.html">Blogs</a> </li>
+                    <li><a href="categories.html">Request a Quote</a> </li>
                     <li class="categories.html"><a href="index-2.html">About Us</a></li>
                     <li class="categories.html"><a href="index-2.html">Contact Us</a></li>
-                   
-                   
-                    <li class="menu-item-has-children">
-                        <a href="#">Login</a>
-                        <ul class="sub-menu">
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                        </ul>
-                    </li>
-
                 </ul>
                 <!-- END / MENU -->
 
@@ -67,48 +57,11 @@
                     <!-- END / MESSAGE INFO -->
 
                     <!-- NOTIFICATION -->
-                    <li class="list-item notification">
-                        <div class="notification-info item-click">
-                            <i class="icon md-bell"></i>
-                            <span class="itemnew"></span>
-                        </div>
-                        <div class="toggle-notification toggle-list">
-                            <div class="list-profile-title">
-                                <h4>Notification</h4>
-                                <span class="count-value">2</span>
-                            </div>
-
-                            <ul class="list-notification">
-
-                                <!-- LIST ITEM -->
-                                <li class="ac-new">
-                                    <a href="#">
-                                        <div class="list-body">
-                                            <div class="author">
-                                                <span>Megacourse</span>
-                                                <div class="div-x"></div>
-                                            </div>
-                                            <p>attend Salary for newbie course</p>
-                                            <div class="image">
-                                                <img src="images/feature/img-1.jpg" alt="">
-                                            </div>
-                                            <div class="time">
-                                                <span>5 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- END / LIST ITEM -->
-
-                                
-
-                            </ul>
-                        </div>
-                    </li>
+                   
                     <!-- END / NOTIFICATION -->
 
                     <li class="list-item account">
-                        <div class="account-info item-click">
+                        {{-- <div class="account-info item-click">
                             <img src="{{asset('/frontend/images/team-13.jpg')}}" alt="">
                         </div>
                         <div class="toggle-account toggle-list">
@@ -116,7 +69,7 @@
                                 <li><a href="setting.html"><i class="icon md-config"></i>Setting</a></li>
                                 <li><a href="login.html"><i class="icon md-arrow-right"></i>Sign Out</a></li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </li>
 
 
