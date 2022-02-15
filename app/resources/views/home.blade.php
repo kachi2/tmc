@@ -90,7 +90,7 @@
     
         </div>
     </section>
-      <section id="mc-section-1" class="mc-section-1 section">
+      <section id="mc-section-1" class="mc-section-1 section" style="padding-bottom:0px">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
@@ -156,12 +156,12 @@
                             <div class="image-heading">
                                 <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
                             </div>
-                            <div class="meta-categories"><a href="#">Web design</a></div>
+                            <div class="meta-categories"><a href="#">{{$cc->category->name}}</a></div>
                             <div class="content-item">
                                 <div class="image-author">
                                     <img src="images/avatar-1.jpg" alt="">
                                 </div>
-                                <h4><a href="course-intro.html">The Complete Digital Photography Course Amazon Top Seller</a></h4>
+                                <h4><a href="course-intro.html">{{$cc->name}}</a></h4>
                                 <div class="name-author">
                                      <a href="#">View Course Details</a>
                                 </div>
@@ -170,11 +170,10 @@
                                 
                                 <div class="view-info">
                                     <i class="fa fa-eye"></i>
-                                    2568
+                                   ₦{{number_format($cc->discount,2)}}
                                 </div>
                                 <div class="price">
-                                    $190
-                                    <span class="price-old">$134</span>
+                                    <span class="price-old"> ₦{{number_format($cc->price,2)}}</span>
                                 </div>
                             </div>
                         </div>

@@ -17,6 +17,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/index', [HomeController::class, 'Index'])->name('index');
 Route::get('/', [HomeController::class, 'Index'])->name('index');
+Route::get('/courses', [HomeController::class, 'Courses'])->name('courses');
 
 
 

@@ -30,12 +30,12 @@
 
                 <!-- MENU -->
                 <ul class="menu">
-                    <li class="current-menu-item"><a href="index-2.html">Home</a></li>
-                    <li class="categories.html"><a href="index-2.html">Courses</a></li>
-                    <li class="categories.html"><a href="index-2.html">Snatika</a></li>
+                    <li class="current-menu-item"><a href="{{route('index')}}">Home</a></li>
+                    <li><a href="{{route('courses')}}">Courses</a></li>
+                    <li><a href="index-2.html">Snatika</a></li>
                     <li><a href="categories.html">Request a Quote</a> </li>
-                    <li class="categories.html"><a href="index-2.html">About Us</a></li>
-                    <li class="categories.html"><a href="index-2.html">Contact Us</a></li>
+                    <li ><a href="index-2.html">About Us</a></li>
+                    <li ><a href="index-2.html">Contact Us</a></li>
                 </ul>
                 <!-- END / MENU -->
 
