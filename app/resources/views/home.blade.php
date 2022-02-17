@@ -13,7 +13,7 @@
                             <p>We Are The Leading And Specialist Provider <br>Of Specialized Corporate Training Including Governance, <br> Risk & Compliance, Financial Crime Prevention, <br>And Leadership Training Focused On Cultivating <br>The Right Attitude And Skills In Your Teams.o<br> <br> 
                             </p>
                             <div class="group">
-                                <a href="#" class="mc-btn btn-style-1">Get Started</a>
+                                <a href="{{route('courses')}}" class="mc-btn btn-style-1">Get Started</a>
                             </div>
                         </div>
 
@@ -33,7 +33,7 @@
                             <p>this is not only an elegant theme but also<br> a course management system<br> for wordpress and drupal
                             </p>
                             <div class="group">
-                                <a href="#" class="mc-btn btn-style-1">See full features</a>
+                               <a href="{{route('courses')}}" class="mc-btn btn-style-1">Get Started</a>
                             </div>
                         </div>
 
@@ -163,7 +163,7 @@
                                 </div>
                                 <h4><a href="course-intro.html">{{$cc->name}}</a></h4>
                                 <div class="name-author">
-                                     <a href="#">View Course Details</a>
+                                     <a href="{{route('course.details', encrypt($cc->id))}}">View Course Details</a>
                                 </div>
                             </div>
                             <div class="ft-item">
