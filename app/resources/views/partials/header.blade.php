@@ -33,7 +33,6 @@
                     <li class="current-menu-item"><a href="{{route('index')}}">Home</a></li>
                     <li><a href="{{route('courses')}}">Courses</a></li>
                     <li><a href="index-2.html">Snatika</a></li>
-                    <li><a href="categories.html">Request a Quote</a> </li>
                     <li ><a href="index-2.html">About Us</a></li>
                     <li ><a href="index-2.html">Contact Us</a></li>
                 </ul>

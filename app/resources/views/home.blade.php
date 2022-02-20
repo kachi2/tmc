@@ -169,7 +169,6 @@
                             <div class="ft-item">
                                 
                                 <div class="view-info">
-                                    <i class="fa fa-eye"></i>
                                    ₦{{number_format($cc->discount,2)}}
                                 </div>
                                 <div class="price">
