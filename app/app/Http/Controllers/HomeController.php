@@ -8,8 +8,6 @@ use App\Models\Course;
 
 class HomeController extends Controller
 {
- 
-    
     public function Index(){
         $course = Course::get();
         //dd($course[0]->category());

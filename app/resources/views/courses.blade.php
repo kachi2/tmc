@@ -53,36 +53,23 @@
                                     <div class="image-heading">
                                         <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
                                     </div>
-                                    <div class="meta-categories"><a href="#">{{$cos->category->name}}</a></div>
+                                    <div class="meta-categories"><a href="{{route('course.details', encrypt($cos->id))}}">{{$cos->category->name}}</a></div>
                                     <div class="content-item">
                                         <div class="image-author">
                                             <img src="images/avatar-1.jpg" alt="">
                                         </div>
-                                        <h4><a href="course-intro.html">{{$cos->name}}</a></h4>
+                                        <h4><a href="{{route('course.details', encrypt($cos->id))}}">{{$cos->name}}</a></h4>
                                         <div class="name-author">
-                                            By <a href="#">Name of Mr or Mrs</a>
+                                             <a href="{{route('course.details', encrypt($cos->id))}}">View Course</a>
                                         </div>
                                     </div>
                                     <div class="ft-item">
-                                        <div class="rating">
-                                            <a href="#" class="active"></a>
-                                            <a href="#" class="active"></a>
-                                            <a href="#" class="active"></a>
-                                            <a href="#"></a>
-                                            <a href="#"></a>
-                                        </div>
-                                        <div class="view-info">
-                                            <i class="icon md-users"></i>
-                                            2568
-                                        </div>
-                                        <div class="comment-info">
-                                            <i class="icon md-comment"></i>
-                                            25
-                                        </div>
-                                        <div class="price">
-                                            $190
-                                            <span class="price-old">$145</span>
-                                        </div>
+                                   <div class="view-info">
+                                   ₦{{number_format($cos->discount,2)}}
+                                </div>
+                                <div class="price">
+                                    <span class="price-old"> ₦{{number_format($cos->price,2)}}</span>
+                                </div>
                                     </div>
                                 </div>
                             </div>

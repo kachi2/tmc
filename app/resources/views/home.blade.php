@@ -67,16 +67,9 @@
                         <div class="mc-select">
                             <select class="select" name="" id="all-categories">
                                 <option value="" selected>All categories</option>
-                                <option value="">2</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mc-select-wrap">
-                        <div class="mc-select">
-                            <select class="select" name="" id="beginner-level">
-                                <option value="" selected>Beginner level</option>
-                                <option value="">Beginner level 2</option>
-                                <option value="">Beginner level 3</option>
+                                @foreach ($courses as $cx )
+                                <option value="{{route('fetchCategory', encrypt($cx->id))}}">{{$cx->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -163,7 +156,7 @@
                                 </div>
                                 <h4><a href="course-intro.html">{{$cc->name}}</a></h4>
                                 <div class="name-author">
-                                     <a href="{{route('course.details', encrypt($cc->id))}}">View Course Details</a>
+                                     <a href="{{route('course.details', encrypt($cc->id))}}">View Course</a>
                                 </div>
                             </div>
                             <div class="ft-item">
