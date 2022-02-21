@@ -56,19 +56,19 @@
         <div class="awe-color bg-color-1"></div>
         <div class="after-slider-bg-2"></div>
         <div class="container">
-    
+
+            <form method="get" action="{{route('fetchCategory')}}" >
+            @csrf
             <div class="after-slider-content tb">
                 <div class="inner tb-cell">
                     <h4>Find your course</h4>
+                    
                     <div class="course-keyword">
-                        <input type="text" placeholder="Course keyword">
-                    </div>
-                    <div class="mc-select-wrap">
                         <div class="mc-select">
-                            <select class="select" name="" id="all-categories">
+                            <select class="select" name="id" id="all-categories">
                                 <option value="" selected>All categories</option>
-                                @foreach ($courses as $cx )
-                                <option value="{{route('fetchCategory', encrypt($cx->id))}}">{{$cx->name}}</option>
+                                @foreach ($category as $cx )
+                                <option  value="{{encrypt($cx->id)}}">{{$cx->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -80,6 +80,7 @@
                     </div>
                 </div>
             </div>
+            </form>
     
         </div>
     </section>

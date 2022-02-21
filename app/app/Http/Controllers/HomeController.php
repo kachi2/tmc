@@ -11,7 +11,8 @@ class HomeController extends Controller
     public function Index(){
         $course = Course::get();
         //dd($course[0]->category());
-        return view('home', compact('course', $course));
+        $category = Category::get();
+        return view('home', compact('course', $course, 'category', $category));
     }
 
     public function Courses(){
@@ -24,5 +25,17 @@ class HomeController extends Controller
         $data['relate'] = Course::inRandomOrder()->take(4)->get();
         $data['categories'] = Category::get();
         return view('details', $data);
+    }
+
+    public function CourseCategories(Request $request){
+       // dd($request->id);
+        $id = decrypt($request->id);
+        $course = Course::where('category_id', $id)->get();
+        if($course){
+            return view('courses', compact('course', $course));
+        }else{
+            $course = Course::get();
+        return view('courses', compact('course', $course));
+        }
     }
 }

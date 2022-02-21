@@ -27,14 +27,11 @@
                                     <div class="img-thumb">
                                         <img src="images/thumb-intro.jpg" alt="">
                                     </div>
-                                    <div class="awe-overlay"></div>
-                                    <a href="#" class="play-icon">
-                                        <i class="fa fa-play"></i>
-                                    </a>
+                                    
+                                   
                                 </div>
-                                <div class="video embed-responsive embed-responsive-16by9">
-                                    <iframe src="http://player.vimeo.com/video/100872038" class="embed-responsive-item">
-                                    </iframe>
+                                 <div class="image-heading">
+                                    <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="price">
@@ -197,8 +194,16 @@
                                             <div class="form-firstname">
                                                 <input type="text" placeholder="State" />
                                             </div>
+                                            <div class="form-lastname"> Number of Candidates
+                                                <select class="form-control"> 
+                                                <option> 1 - 5</option>
+                                                <option> 6- 10 </option>
+                                                <option> 10 - 50 </option>
+                                                <option> 51 - 100 </option>
+                                                </select>
+                                            </div>
                                             <div class="form-submit-1">
-                                                <input type="button" value="Sign Up and Continue" class="next mc-btn btn-style-1">
+                                                <input type="button" value="Submit Request" class="next mc-btn btn-style-1">
                                             </div>
                                         </div>
                                     </div>
@@ -231,34 +236,6 @@
                                                     <span class="price-old"> ₦{{number_format($course->price,2)}}</span>
                                                 </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-2">
-                                            <h3 class="fs-title">Request completed successfully</h3>
-                                            <p>Our Agent will contact you with the details you provided. If you did not receice response within 24hrs reach on enquiries@tmcinstitute.com</p>
-
-                                            <div class="widget widget_share">
-                                                <h4>Share this course</h4>
-                                                <div class="share-body">
-                                                    <a href="#" class="twitter" title="twitter">
-                                                        <i class="icon md-twitter"></i>
-                                                    </a>
-                                                    <a href="#" class="pinterest" title="pinterest">
-                                                        <i class="icon md-pinterest-1"></i>
-                                                    </a>
-                                                    <a href="#" class="facebook" title="facebook">
-                                                        <i class="icon md-facebook-1"></i>
-                                                    </a>
-                                                    <a href="#" class="google-plus" title="google plus">
-                                                        <i class="icon md-google-plus"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-submit-1">
-                                                <input type="submit" value="Start Learning" class="next mc-btn btn-style-1">
                                             </div>
                                         </div>
                                     </div>
