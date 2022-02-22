@@ -292,3 +292,15 @@
     
 
 @endsection
+
+@section('scripts')
+<script>
+let msg = {!!  json_encode(Session::get('msg'))!!}
+if(msg){
+
+swal("Request Sent Successfully", "Your request sent successully, our team will contact you for more information");
+}
+
+</script>
+
+@endsection

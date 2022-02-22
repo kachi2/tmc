@@ -14,6 +14,9 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+Route::get('/about-us', [HomeController::class, 'About'])->name('about-us');
+Route::get('/contact-us', [HomeController::class, 'Contact'])->name('contact-us');
+Route::post('/tmc/contact-us', [HomeController::class, 'Contacts'])->name('contactUs');
 
 Route::get('/index', [HomeController::class, 'Index'])->name('index');
 Route::get('/', [HomeController::class, 'Index'])->name('index');

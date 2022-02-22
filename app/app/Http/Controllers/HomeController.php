@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUs;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Enrollment;
 use App\Mail\EnrollmentMail;
+use App\Mail\EnrollmentMails;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use App\Models\Course;
@@ -66,6 +68,28 @@ class HomeController extends Controller
             'candidates' => $request->trainee,
         ];
         Mail::to($request->email)->send(new EnrollmentMail($data));
+        Mail::to('jesmikky@gmail.com')->send(new EnrollmentMails($data));
+        Session::flash('alert', 'success');
+        Session::flash('msg', 'Request sent Successfully');
+        return back();
+    }
+
+    public function About(){
+        return view('about');
+    }
+
+    public function Contact(){
+        return view('contact');
+    }
+
+    public function Contacts(Request $request){
+        $data = [
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'message' => $request->message,
+        ];
+        Mail::to('jesmikky@gmail.com')->send(new ContactUs($data));
         Session::flash('alert', 'success');
         Session::flash('msg', 'Request sent Successfully');
         return back();
