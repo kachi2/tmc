@@ -139,7 +139,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <form>
+                    <form method="post" action="{{route('traineeEnrollment',encrypt($course->id))}}"> 
+                                    @csrf
                         <ul id="bar">
                             <li class="active">Enroll for this course</li>
                             
@@ -160,7 +161,7 @@
                                                     <div class="image-author">
                                                         <img src="images/avatar-1.jpg" alt="">
                                                     </div>
-                                                    <h4><a href="course-intro.html">{{$course->name}}</a></h4>
+                                                    <h4><a href="#">{{$course->name}}</a></h4>
                                                    
                                                 </div>
                                                 <div class="ft-item">
@@ -174,43 +175,43 @@
                                                 </div>
                                             </div>
                                         </div>
+                                   
                                     </div>
-
+                                 
                                     <div class="col-md-6">
                                         <div class="form-2">
                                             <h3 class="fs-title text-capitalize">Please enter your details</h3>
                                             <div class="form-firstname">
-                                                <input type="text" placeholder="Full Name" />
+                                                <input type="text" name="name" placeholder="Full Name"  required>
                                             </div>
                                             <div class="form-lastname">
-                                                <input type="text" placeholder="Email " />
+                                                <input type="text" name="email" placeholder="Email " required/>
                                             </div>
                                             <div class="form-firstname">
-                                                <input type="text" placeholder="Phone Number" />
+                                                <input type="text" name="phone" placeholder="Phone Number" required />
                                             </div>
                                             <div class="form-lastname">
-                                                <input type="text" placeholder="Address" />
+                                                <input type="text" name="address" placeholder="Address" required/>
                                             </div>
                                             <div class="form-firstname">
-                                                <input type="text" placeholder="State" />
+                                                <input type="text" name="state" placeholder="State" required />
                                             </div>
-                                            <div class="form-lastname"> Number of Candidates
-                                                <select class="form-control"> 
-                                                <option> 1 - 5</option>
-                                                <option> 6- 10 </option>
-                                                <option> 10 - 50 </option>
-                                                <option> 51 - 100 </option>
+                                            <div class="form-lastname" > Number of Trainee
+                                                <select class="form-control" name="trainee"> 
+                                                <option value=" 1 - 5"> 1 - 5</option>
+                                                <option value=" 6 - 10"> 6- 10 </option>
+                                                <option value="10 - 50"> 10 - 50 </option>
+                                                <option value="50 - 100"> 51 - 100 </option>
                                                 </select>
                                             </div>
                                             <div class="form-submit-1">
-                                                <input type="button" value="Submit Request" class="next mc-btn btn-style-1">
+                                                <button type="submit"  class="mc-btn btn-style-1"> Submit Request</button>
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </fieldset>
-
-
                             <fieldset>
                                 <div class="row">
                                     <div class="col-md-5">

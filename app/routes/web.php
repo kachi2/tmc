@@ -20,6 +20,7 @@ Route::get('/', [HomeController::class, 'Index'])->name('index');
 Route::get('/courses', [HomeController::class, 'Courses'])->name('courses');
 Route::get('/course/details/{id}', [HomeController::class, 'CourseDetails'])->name('course.details');
 Route::get('/courses/categories/', [HomeController::class, 'CourseCategories'])->name('fetchCategory');
+Route::post('/course/enrollment/{id}', [HomeController::class, 'TraineeEnrollment'])->name('traineeEnrollment');
 
 
 

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Enrollment;
+use App\Mail\EnrollmentMail;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use App\Models\Course;
 
 class HomeController extends Controller
@@ -37,5 +41,33 @@ class HomeController extends Controller
             $course = Course::get();
         return view('courses', compact('course', $course));
         }
+    }
+
+    public function TraineeEnrollment(Request $request, $id){
+        $course = Course::where('id', decrypt($id))->first();
+
+        //dd($course);
+        $enrol = new Enrollment;
+        $enrol->name = $request->name;
+        $enrol->phone = $request->phone;
+        $enrol->state = $request->state;
+        $enrol->address = $request->address;
+        $enrol->course_id = $course->id;
+        $enrol->email = $request->email;
+        $enrol->candidates = $request->trainee;
+        $enrol->save();
+        $data = [
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'state' => $request->state,
+            'address' => $request->address,
+            'course' => $course->name,
+            'email' => $request->email,
+            'candidates' => $request->trainee,
+        ];
+        Mail::to($request->email)->send(new EnrollmentMail($data));
+        Session::flash('alert', 'success');
+        Session::flash('msg', 'Request sent Successfully');
+        return back();
     }
 }
