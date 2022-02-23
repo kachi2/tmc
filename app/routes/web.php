@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +24,15 @@ Route::get('/courses', [HomeController::class, 'Courses'])->name('courses');
 Route::get('/course/details/{id}', [HomeController::class, 'CourseDetails'])->name('course.details');
 Route::get('/courses/categories/', [HomeController::class, 'CourseCategories'])->name('fetchCategory');
 Route::post('/course/enrollment/{id}', [HomeController::class, 'TraineeEnrollment'])->name('traineeEnrollment');
+
+
+
+Route::prefix('dashboard')->group(function(){
+    Route::get('/', [AdminController::class, 'Courses'])->name('admin.index'); 
+    Route::get('/course/details/{id}', [AdminController::class, 'CourseDetails'])->name('admin.course.details');
+    Route::get('/course/create', [AdminController::class, 'Create'])->name('admin.course.create');
+
+});
 
 
 
