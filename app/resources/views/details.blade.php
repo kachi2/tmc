@@ -34,49 +34,11 @@
                                     <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
                                 </div>
                             </div>
+                            <div style="padding-bottom:20px"></div>
                             <div class="price">
                                  N{{number_format($course->discount,2)}}
                              </div>
                             <a href="#" class="take-this-course mc-btn btn-style-1">Take this course</a>
-                        </div>
-
-                        <div class="new-course">
-                            
-                            <div class="item course-code">
-                                <i class="icon md-time"></i>
-                                <h4><a href="#">Duration</a></h4>
-                                <p class="detail-course">{{$course->duration}}</p>
-                            </div>
-                        </div>
-                        <hr class="line">
-                     
-                        <hr class="line">
-                        {{-- <div class="widget widget_equipment">
-                            <i class="icon md-config"></i>
-                            <h4 class="xsm black bold">Equipment</h4>
-                            <div class="equipment-body">
-                                <a href="#">Photoshop CC</a>,
-                                <a href="#">Illustrator CC</a>
-                            </div>
-                        </div> --}}
-                       
-                        <div class="widget widget_share">
-                            <i class="icon md-forward"></i>
-                            <h4 class="xsm black bold">Share course</h4>
-                            <div class="share-body">
-                                <a href="#" class="twitter" title="twitter">
-                                    <i class="icon md-twitter"></i>
-                                </a>
-                                <a href="#" class="pinterest" title="pinterest">
-                                    <i class="icon md-pinterest-1"></i>
-                                </a>
-                                <a href="#" class="facebook" title="facebook">
-                                    <i class="icon md-facebook-1"></i>
-                                </a>
-                                <a href="#" class="google-plus" title="google plus">
-                                    <i class="icon md-google-plus"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>    
@@ -85,14 +47,14 @@
                         <ul class="nav-tabs" role="tablist">
                             <li class="active"><a href="#introduction" role="tab" data-toggle="tab">Introduction</a></li>
                             <li><a href="#outline" role="tab" data-toggle="tab">Outline</a></li>
-                            <li><a href="#review" role="tab" data-toggle="tab">Review</a></li>
+                            <li><a href="#duration" role="tab" data-toggle="tab">Course Duration</a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <!-- INTRODUCTION -->
                             <div class="tab-pane fade in active" id="introduction">
                                 <h4 class="sm black bold">Introduction</h4>
-                                <p>{{$course->description}}</p>
+                                <p>{!! $course->description !!}</p>
                                 </div>
                             <!-- END / INTRODUCTION -->
     
@@ -104,10 +66,27 @@
                                     <h4 class="tit-section xsm">Outline</h4>
                                     <ul class="section-list">
                                         <li>
-                                            <div class="count"><span>1</span></div>
+                                            <div class="count"></div>
                                             <div class="list-body">
                                                 <i class="icon md-eye"></i>
-                                                <p>{{$course->outline}}></p>  
+                                                <p>{!! $course->outline !!}</p>  
+                                            </div>
+                                            
+                                        </li>
+    
+                                     
+                                    </ul>
+                                </div>
+                                </div>
+                                <div class="tab-pane fade" id="duration">
+                                 <div class="section-outline">
+                                    <h4 class="tit-section xsm">Duration</h4>
+                                    <ul class="section-list">
+                                        <li>
+                                            <div class="count"></div>
+                                            <div class="list-body">
+                                                <i class="icon md-eye"></i>
+                                                <p>{!! $course->duration !!}</p>  
                                             </div>
                                             
                                         </li>

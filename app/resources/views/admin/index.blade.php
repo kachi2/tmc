@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="edit-view">
-                            <a href="{{route('admin.course.details', encrypt($cos->id))}}" class="edit">Edit Course</a>
+                            <a href="{{route('admin.course.edit', encrypt($cos->id))}}" class="edit">Edit Course</a>
                             <a href="{{route('admin.course.details', encrypt($cos->id))}}" class="view">View Course</a>
                         </div>
                     </div>

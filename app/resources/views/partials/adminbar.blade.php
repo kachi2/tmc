@@ -37,14 +37,14 @@
     <section class="content-bar">
         <div class="container">
             <ul>
-                <li  class="current">
-                    <a href="account-learning.html">
+                <li>
+                    <a href="{{route('admin.index')}}">
                         <i class="icon md-book-1"></i>
                        Courses
                     </a>
                 </li>
                 <li>
-                    <a href="account-teaching.html">
+                    <a href="{{route('admin.category', encrypt(1))}}">
                         <i class="icon md-people"></i>
                         Categories
                     </a>

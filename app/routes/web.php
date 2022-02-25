@@ -24,17 +24,20 @@ Route::get('/courses', [HomeController::class, 'Courses'])->name('courses');
 Route::get('/course/details/{id}', [HomeController::class, 'CourseDetails'])->name('course.details');
 Route::get('/courses/categories/', [HomeController::class, 'CourseCategories'])->name('fetchCategory');
 Route::post('/course/enrollment/{id}', [HomeController::class, 'TraineeEnrollment'])->name('traineeEnrollment');
-
+Route::get('/category/list', [HomeController::class, 'Category'])->name('users.category');
+Route::get('/categories/{id}', [HomeController::class, 'Categories'])->name('users.categories');
 
 
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [AdminController::class, 'Courses'])->name('admin.index'); 
     Route::get('/course/details/{id}', [AdminController::class, 'CourseDetails'])->name('admin.course.details');
     Route::get('/course/create', [AdminController::class, 'Create'])->name('admin.course.create');
+    Route::post('/course/store', [AdminController::class, 'Store'])->name('admin.course.store');
+    Route::get('/course/edit/{id}', [AdminController::class, 'Edit'])->name('admin.course.edit');
+    Route::post('/course/update/{id}', [AdminController::class, 'Update'])->name('admin.course.update');
+    Route::get('/category/{id}', [AdminController::class, 'Category'])->name('admin.category');
 
 });
-
-
 
 
 require __DIR__.'/auth.php';

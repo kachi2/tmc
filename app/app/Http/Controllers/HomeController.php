@@ -22,9 +22,29 @@ class HomeController extends Controller
     }
 
     public function Courses(){
-        $course = Course::latest()->get();
-        return view('courses', compact('course', $course));
+        $courses = Course::latest()->get();
+        $category = Category::get();
+        return view('courses', compact('courses', $courses, 'category', $category));
     }    //
+
+    public function Category(Request $request){
+        if(isset($request->id)){
+            $courses = Course::where('category_id', decrypt($request->id))->get();
+        }else{
+            $courses = Course::get();
+        }
+        $category = Category::get();
+        return view('courses', compact('courses', $courses, 'category', $category));
+    }
+    public function Categories($id){
+        if(isset($id)){
+            $courses = Course::where('category_id', decrypt($id))->get();
+        }else{
+            $courses = Course::get();
+        }
+        $category = Category::get();
+        return view('courses', compact('courses', $courses, 'category', $category));
+    }
 
     public function CourseDetails($id){
         $data['course'] = Course::where('id', decrypt($id))->first();
