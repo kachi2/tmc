@@ -177,10 +177,11 @@
                                             </div>
                                             <div class="form-lastname" > Number of Trainee
                                                 <select class="form-control" name="trainee"> 
-                                                <option value=" 1 - 5"> 1 - 5</option>
-                                                <option value=" 6 - 10"> 6- 10 </option>
-                                                <option value="10 - 50"> 10 - 50 </option>
-                                                <option value="50 - 100"> 51 - 100 </option>
+                                                <?php $x = 1;
+                                                while($x <= 50) { ?>
+                                                <option value="{{$x}}">{{$x}}</option>
+
+                                                <?php $x++; }    ?>
                                                 </select>
                                             </div>
                                             <div class="form-submit-1">

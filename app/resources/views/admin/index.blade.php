@@ -36,8 +36,8 @@
                             <div class="">
                                Views: 294
                               {{$cos->views}}
-
-                              | Enrolled: 440
+                            | Enrollments: 
+                              {{count($cos->enrollment($cos->id))}}
                             </div>
                             
 

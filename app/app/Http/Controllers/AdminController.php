@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Enrollment;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -100,5 +102,15 @@ class AdminController extends Controller
         }
         $category = Category::get();
         return view('admin.category', compact('courses', $courses, 'category', $category));
+    }
+
+    public function Enrollment(){
+        $enrollment =  Enrollment::latest()->get();
+        return view('admin.enrollment', compact('enrollment',$enrollment));   
+    }
+
+    public function Profile(){
+        $profile = User::where('id', 1)->first();
+        return view('admin.account', compact('profile', $profile));
     }
 }

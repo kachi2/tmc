@@ -34,4 +34,31 @@
 <script type="text/javascript" src="{{asset('/frontend/js/scripts.js')}}"></script>
 
 @yield('scripts')
+
+<script type="text/javascript">
+
+    $.each($('.table-wrap'), function() {
+        $(this)
+            .find('.table-item')
+            .children('.thead:not(.active)')
+            .next('.tbody').hide();
+        $(this)
+            .find('.table-item')
+            .delegate('.thead', 'click', function(evt) {
+                evt.preventDefault();
+                if ($(this).hasClass('active')==false) {
+                    $('.table-item')
+                        .find('.thead')
+                        .removeClass('active')
+                        .siblings('.tbody')
+                            .slideUp(200);
+                }
+                $(this)
+                    .toggleClass('active')
+                    .siblings('.tbody')
+                        .slideToggle(200);
+        });
+    });
+
+</script>
 </body>

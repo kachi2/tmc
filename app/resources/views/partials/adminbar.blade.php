@@ -17,15 +17,15 @@
             </div>
             <div class="info-follow">
                 <div class="trophies">
-                    <span>12</span>
+                    <span>{{count($Nav_courses)}}</span>
                     <p>Courses</p>
                 </div>
                 <div class="trophies">
-                    <span>2</span>
+                    <span>{{count($Nav_Categories)}}</span>
                     <p>Categories</p>
                 </div>
                 <div class="trophies">
-                    <span>20</span>
+                    <span>{{count($Nav_enrollments)}}</span>
                     <p>Students Enrollment</p>
                 </div>
                 
@@ -50,13 +50,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="account-assignment.html">
+                    <a href="{{route('courses.enrollment')}}">
                         <i class="icon md-shopping"></i>
                         Enrollment
                     </a>
                 </li>
                 <li>
-                    <a href="account-profile-guest-view.html">
+                    <a href="{{route('account.profile')}}">
                         <i class="icon md-user-minus"></i>
                         Profile
                     </a>

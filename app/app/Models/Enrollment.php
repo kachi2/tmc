@@ -12,4 +12,8 @@ class Enrollment extends Model
     protected $fillable = [
         'course_id', 'name', 'email', 'address', 'state', 'candidates', 'phone'
     ];
+
+    public function course(){
+        return $this->belongsTo(Course::class);
+    }
 }

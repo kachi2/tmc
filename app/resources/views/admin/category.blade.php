@@ -27,10 +27,7 @@
                         <div class="ft-item">
                            
                             <div class="">
-                               Views: 294
-                              {{$cos->views}}
-
-                              | Enrolled: 440
+                              Views:{{$cos->views}} | Enrollment: {{count($cos->enrollment($cos->id))}}
                             </div>
                             
 

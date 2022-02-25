@@ -17,7 +17,6 @@ use App\Http\Controllers\AdminController;
 Route::get('/about-us', [HomeController::class, 'About'])->name('about-us');
 Route::get('/contact-us', [HomeController::class, 'Contact'])->name('contact-us');
 Route::post('/tmc/contact-us', [HomeController::class, 'Contacts'])->name('contactUs');
-
 Route::get('/index', [HomeController::class, 'Index'])->name('index');
 Route::get('/', [HomeController::class, 'Index'])->name('index');
 Route::get('/courses', [HomeController::class, 'Courses'])->name('courses');
@@ -26,8 +25,7 @@ Route::get('/courses/categories/', [HomeController::class, 'CourseCategories'])-
 Route::post('/course/enrollment/{id}', [HomeController::class, 'TraineeEnrollment'])->name('traineeEnrollment');
 Route::get('/category/list', [HomeController::class, 'Category'])->name('users.category');
 Route::get('/categories/{id}', [HomeController::class, 'Categories'])->name('users.categories');
-
-
+//admin pages
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [AdminController::class, 'Courses'])->name('admin.index'); 
     Route::get('/course/details/{id}', [AdminController::class, 'CourseDetails'])->name('admin.course.details');
@@ -36,8 +34,7 @@ Route::prefix('dashboard')->group(function(){
     Route::get('/course/edit/{id}', [AdminController::class, 'Edit'])->name('admin.course.edit');
     Route::post('/course/update/{id}', [AdminController::class, 'Update'])->name('admin.course.update');
     Route::get('/category/{id}', [AdminController::class, 'Category'])->name('admin.category');
-
+    Route::get('/course/enrollment', [AdminController::class, 'Enrollment'])->name('courses.enrollment');
+    Route::get('/account/profile', [AdminController::class, 'Profile'])->name('account.profile');
 });
-
-
 require __DIR__.'/auth.php';
