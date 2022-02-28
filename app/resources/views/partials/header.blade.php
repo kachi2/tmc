@@ -14,7 +14,6 @@
     <!-- HEADER -->
     <header id="header" class="header">
         <div class="container">
-
             <!-- LOGO -->
             <div class="logo"><a href="{{route('index')}}"><img src="{{asset('/frontend/images/logo.jpg')}}" width="80px" height="20px"alt=""></a></div>
             <!-- END / LOGO -->
@@ -30,7 +29,7 @@
                 <ul class="menu">
                     <li class="current-menu-item"><a href="{{route('index')}}">Home</a></li>
                     <li><a href="{{route('courses')}}">Courses</a></li>
-                    <li><a href="index-2.html">Snatika</a></li>
+                    <li><a href="{{route('courses.snatika')}}">Snatika</a></li>
                     <li ><a href="{{route('about-us')}}">About Us</a></li>
                     <li ><a href="{{route('contact-us')}}">Contact Us</a></li>
                 </ul>

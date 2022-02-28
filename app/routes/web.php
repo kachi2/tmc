@@ -25,6 +25,7 @@ Route::get('/courses/categories/', [HomeController::class, 'CourseCategories'])-
 Route::post('/course/enrollment/{id}', [HomeController::class, 'TraineeEnrollment'])->name('traineeEnrollment');
 Route::get('/category/list', [HomeController::class, 'Category'])->name('users.category');
 Route::get('/categories/{id}', [HomeController::class, 'Categories'])->name('users.categories');
+Route::get('/courses/snatika', [HomeController::class, 'Snatika'])->name('courses.snatika');
 //admin pages
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [AdminController::class, 'Courses'])->name('admin.index'); 

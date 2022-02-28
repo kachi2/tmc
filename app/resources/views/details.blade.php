@@ -178,7 +178,7 @@
                                             <div class="form-lastname" > Number of Trainee
                                                 <select class="form-control" name="trainee"> 
                                                 <?php $x = 1;
-                                                while($x <= 50) { ?>
+                                                while($x <= 20) { ?>
                                                 <option value="{{$x}}">{{$x}}</option>
 
                                                 <?php $x++; }    ?>

@@ -114,4 +114,8 @@ class HomeController extends Controller
         Session::flash('msg', 'Request sent Successfully');
         return back();
     }
+
+    public function Snatika(){
+        return view('snatika');
+    }
 }
