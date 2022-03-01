@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Category;
@@ -13,6 +12,7 @@ use App\Models\User;
 class AdminController extends Controller
 {
     //
+
     public function Courses(){
         $courses = Course::get();
         return view('admin.index', compact('courses', $courses));

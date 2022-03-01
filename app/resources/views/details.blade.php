@@ -276,9 +276,14 @@
 @section('scripts')
 <script>
 let msg = {!!  json_encode(Session::get('msg'))!!}
+let alert = {!! json_encode(Session::get('alert')) !!}
 if(msg){
 
-swal("Request Sent Successfully", "Your request sent successully, our team will contact you for more information");
+Swal.fire({
+    'title': alert,
+    'icon': alert,
+    'text': msg
+});
 }
 
 </script>

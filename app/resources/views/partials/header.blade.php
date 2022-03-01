@@ -30,8 +30,17 @@
                     <li class="current-menu-item"><a href="{{route('index')}}">Home</a></li>
                     <li><a href="{{route('courses')}}">Courses</a></li>
                     <li><a href="{{route('courses.snatika')}}">Snatika</a></li>
-                    <li ><a href="{{route('about-us')}}">About Us</a></li>
-                    <li ><a href="{{route('contact-us')}}">Contact Us</a></li>
+                    <li ><a href="{{route('about-us')}}">About us</a></li>
+                    <li ><a href="{{route('contact-us')}}">Contact us</a></li>
+                    @if(!auth()->user())
+                        <li class="menu-item-has-children">
+                        <a href="#">Login</a>
+                        <ul class="sub-menu">
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Register</a></li>
+                        </ul>
+                    </li>
+                    @endif
                 </ul>
                 <!-- END / MENU -->
                 <!-- SEARCH BOX -->
@@ -56,16 +65,24 @@
                     <!-- END / NOTIFICATION -->
 
                     <li class="list-item account">
-                        {{-- <div class="account-info item-click">
+                    @if(Auth()->user())
+                        <div class="account-info item-click">
                             <img src="{{asset('/frontend/images/team-13.jpg')}}" alt="">
                         </div>
                         <div class="toggle-account toggle-list">
                             <ul class="list-account">
                                 <li><a href="setting.html"><i class="icon md-config"></i>Setting</a></li>
-                                <li><a href="login.html"><i class="icon md-arrow-right"></i>Sign Out</a></li>
+                                <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('formlog').submit()";><i class="icon md-arrow-right"></i>Sign Out</a>
+
+                                    <form action="{{route('logout')}}" method="post" id="formlog">
+                                    @csrf
+                                    </form>
+                                
+                                </li>
                             </ul>
-                        </div> --}}
+                        </div>
                     </li>
+                    @endif
 
 
                 </ul>

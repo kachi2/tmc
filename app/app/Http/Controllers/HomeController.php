@@ -7,13 +7,25 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Enrollment;
 use App\Mail\EnrollmentMail;
+use App\Models\User;
 use App\Mail\EnrollmentMails;
+use App\Traits\CreateUsers;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use App\Models\Course;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
+
+    public function __construct(){
+
+        return $this->middleware('auth');
+    }
+    use CreateUsers;
     public function Index(){
         $course = Course::get();
         //dd($course[0]->category());
@@ -66,10 +78,27 @@ class HomeController extends Controller
     }
 
     public function TraineeEnrollment(Request $request, $id){
-        $course = Course::where('id', decrypt($id))->first();
 
-        //dd($course);
+        $check = User::where('email', $request->email)->first();
+        if($check){
+            Session::flash('alert', 'error');
+            Session::flash('msg', 'The email is already Used');
+            return redirect()->back();
+        }
+        $course = Course::where('id', decrypt($id))->first();
+       // dd($course);
+            $pass = substr($request->name, 0, 5).rand(111,888);
+         $datas = [
+             'name' => $request->name,
+             'email' => $request->email,
+            'password' => Hash::make($pass),
+          ];
+         $uu = User::create($datas);
+         if($uu){
+        sleep(2);
+         $user = User::latest()->first();
         $enrol = new Enrollment;
+        $enrol->user_id = $user->id;
         $enrol->name = $request->name;
         $enrol->phone = $request->phone;
         $enrol->state = $request->state;
@@ -85,12 +114,14 @@ class HomeController extends Controller
             'address' => $request->address,
             'course' => $course->name,
             'email' => $request->email,
+            'pass' => $pass,
             'candidates' => $request->trainee,
         ];
+    }
         Mail::to($request->email)->send(new EnrollmentMail($data));
         Mail::to('jesmikky@gmail.com')->send(new EnrollmentMails($data));
         Session::flash('alert', 'success');
-        Session::flash('msg', 'Request sent Successfully');
+        Session::flash('msg', 'Request sent Successfully, check your email for account details');
         return back();
     }
 

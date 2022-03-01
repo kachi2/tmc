@@ -14,12 +14,16 @@
                     <td style="padding:20px 30px 20px 30px;">
                         <table align="center" style="width: 100%; max-width: 800px;">
                             <tr><td style="font-weight: 500; font-size: 20px; color: #383838;">Dear {{$data["name"]}} </td></tr>
-                            <tr><td height="7px" style="line-height: 7px;"></td></tr>
+                            <tr><td height="7px" style="line-height: 7px;"></td>
                             <tr><td style=" font-weight: 400; font-size: 15px;">This is to inform you that we got your enrollment request</td></tr>
-                            <tr><td style=" font-weight: 400; font-size: 15px;">Please confirm the details below</td>
+                            <hr>
+                            <tr><td style=" font-weight: 400; font-size: 15px">Login with the following details to manage your account</td>
+                            <hr>
+                            <tr><td style=" font-weight: 400; font-size: 15px;">Email: <span >{{$data["email"]}}</span></td></tr>
+                            <tr><td style="font-weight: 400; font-size: 15px;">Password: <span>{{$data["pass"]}}</span></td></tr>
                             <tr><td height="5px" style="line-height: 5px;"></td></tr>
+                            <hr>
                             <tr><td style=" font-weight: 400; font-size: 15px;">Course: <span >{{$data["course"]}}</span></td></tr>
-                            <tr><td style=" font-weight: 400; font-size: 15px;">Email: <span>{{$data["email"]}}</span></td></tr>
                             <tr><td style="font-weight: 400; font-size: 15px;">Phone Number: <span>{{$data["phone"]}}</span></td></tr>
                             <tr><td style="font-weight: 400; font-size: 15px;">Address: <span>{{$data["address"]}}</span></td></tr>
                             <tr><td style="font-weight: 400; font-size: 15px;">State: <span>{{$data["state"]}}</span></td></tr>

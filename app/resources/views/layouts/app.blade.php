@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/frontend/css/md-font.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/frontend/css/style.css')}}">
     <script src="https://cdn.ckeditor.com/4.17.2/basic/ckeditor.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.4/sweetalert2.all.min.js" integrity="sha512-hDt6c6JA9ytE/b7OF73Bhj1lXT0wucQXm9yKjSV7BrJ6o5CVs1hq7nIQWU4OhOyrUbbL1KhN7Jt00v7UZA18og==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <title>@if(isset($title)) {{$title}} @else  TMC Institute @endif</title>
 </head>
 @include('partials.header')
