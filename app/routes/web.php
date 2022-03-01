@@ -30,6 +30,7 @@ Route::get('/courses/snatika', [HomeController::class, 'Snatika'])->name('course
 
 Route::prefix('users')->group(function(){
     Route::get('/courses', [UserController::class, 'Courses'])->name('users.courses');
+    Route::get('/account', [UserController::class, 'Account'])->name('users.account');
 });
 
 

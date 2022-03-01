@@ -71,7 +71,7 @@
                         </div>
                         <div class="toggle-account toggle-list">
                             <ul class="list-account">
-                                <li><a href="setting.html"><i class="icon md-config"></i>Setting</a></li>
+                                <li><a href="{{route('users.account')}}"><i class="icon md-config"></i>Account</a></li>
                                 <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('formlog').submit()";><i class="icon md-arrow-right"></i>Sign Out</a>
 
                                     <form action="{{route('logout')}}" method="post" id="formlog">

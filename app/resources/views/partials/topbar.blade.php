@@ -8,25 +8,25 @@
                     <img src="images/team-13.jpg" alt="">
                 </div>    
                 <div class="name-author">
-                    <h2 class="big">TMC Institute</h2>
+                    <h2 class="big">{{strtoupper(auth()->user()->name)}}</h2>
                 </div>     
                 <div class="address-author">
-                    <i class="fa fa-map-marker"></i>
-                    <h3>Admin Page</h3>
+                    <i class="fa fa-envelope"></i>
+                    <h3>{{auth()->user()->email}}</h3>
                 </div>
             </div>
             <div class="info-follow">
                 <div class="trophies">
-                    <span>{{count($Nav_courses)}}</span>
+                    <span>{{count($user_courses)}}</span>
                     <p>Courses</p>
                 </div>
                 <div class="trophies">
-                    <span>{{count($Nav_Categories)}}</span>
-                    <p>Categories</p>
+                    <span>{{count($user_completed)}}</span>
+                    <p>Completed Courses</p>
                 </div>
                 <div class="trophies">
-                    <span>{{count($Nav_enrollments)}}</span>
-                    <p>Students Enrollment</p>
+                    <span>{{count($user_pending)}}</span>
+                    <p>Pending Courses</p>
                 </div>
                 
             </div>
