@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,12 @@ Route::post('/course/enrollment/{id}', [HomeController::class, 'TraineeEnrollmen
 Route::get('/category/list', [HomeController::class, 'Category'])->name('users.category');
 Route::get('/categories/{id}', [HomeController::class, 'Categories'])->name('users.categories');
 Route::get('/courses/snatika', [HomeController::class, 'Snatika'])->name('courses.snatika');
+
+Route::prefix('users')->group(function(){
+    Route::get('/courses', [UserController::class, 'Courses'])->name('users.courses');
+});
+
+
 //admin pages
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [AdminController::class, 'Courses'])->name('admin.index'); 

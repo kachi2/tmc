@@ -36,8 +36,8 @@
                         <li class="menu-item-has-children">
                         <a href="#">Login</a>
                         <ul class="sub-menu">
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
+                            <li><a href="{{route('login')}}">Login</a></li>
+                            <li><a href="{{route('register')}}">Register</a></li>
                         </ul>
                     </li>
                     @endif
