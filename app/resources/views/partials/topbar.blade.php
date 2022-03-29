@@ -21,12 +21,12 @@
                     <p>Courses</p>
                 </div>
                 <div class="trophies">
-                    <span>{{count($user_completed)}}</span>
-                    <p>Completed Courses</p>
+                    <span>{{count($paid_courses)}}</span>
+                    <p>Paid Course</p>
                 </div>
                 <div class="trophies">
-                    <span>{{count($user_pending)}}</span>
-                    <p>Pending Courses</p>
+                    <span>{{count($pending_payment)}}</span>
+                    <p>Pending Payment</p>
                 </div>
                 
             </div>
@@ -38,25 +38,13 @@
         <div class="container">
             <ul>
                 <li>
-                    <a href="{{route('admin.index')}}">
+                    <a href="{{route('users.courses')}}">
                         <i class="icon md-book-1"></i>
-                       Courses
+                       My Courses
                     </a>
-                </li>
+                </li> 
                 <li>
-                    <a href="{{route('admin.category', encrypt(1))}}">
-                        <i class="icon md-people"></i>
-                        Categories
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('courses.enrollment')}}">
-                        <i class="icon md-shopping"></i>
-                        Enrollment
-                    </a>
-                </li>
-                <li>
-                    <a href="{{route('account.profile')}}">
+                    <a href="{{route('users.profile')}}">
                         <i class="icon md-user-minus"></i>
                         Profile
                     </a>

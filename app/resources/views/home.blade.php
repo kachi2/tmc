@@ -150,12 +150,12 @@
                             <div class="image-heading">
                                 <img src="{{asset('/frontend/images/blog/'.$cc->image)}}" alt="">
                             </div>
-                            <div class="meta-categories"><a href="#">{{$cc->category->name}}</a></div>
+                            <div class="meta-categories"><a href="{{route('course.details', encrypt($cc->id))}}">{{$cc->category->name}}</a></div>
                             <div class="content-item">
                                 <div class="image-author">
                                     <img src="images/avatar-1.jpg" alt="">
                                 </div>
-                                <h4><a href="course-intro.html">{{$cc->name}}</a></h4>
+                                <h4><a href="{{route('course.details', encrypt($cc->id))}}">{{$cc->name}}</a></h4>
                                 <div class="name-author">
                                      <a href="{{route('course.details', encrypt($cc->id))}}">View Course</a>
                                 </div>

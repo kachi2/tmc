@@ -61,7 +61,7 @@
                         <div class="image-heading">
                           <a href="{{route('course.details', encrypt($cos->id))}}">  <img src="{{asset('/frontend/images/blog/'.$cos->image)}}" alt=""> </a>
                         </div>
-                        <div class="meta-categories"><a href="#">{{$cos->category->name}}</a></div>
+                        <div class="meta-categories"><a href="{{route('course.details', encrypt($cc->id))}}">{{$cos->category->name}}</a></div>
                            <div class="content-item">
                                         <div class="image-author">
                                             <img src="images/avatar-1.jpg" alt="">

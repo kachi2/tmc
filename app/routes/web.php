@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AccountController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,12 +30,16 @@ Route::get('/categories/{id}', [HomeController::class, 'Categories'])->name('use
 Route::get('/courses/snatika', [HomeController::class, 'Snatika'])->name('courses.snatika');
 
 Route::prefix('users')->group(function(){
+    Route::get('/', [UserController::class, 'Courses'])->name('users.account');
     Route::get('/courses', [UserController::class, 'Courses'])->name('users.courses');
-    Route::get('/account', [UserController::class, 'Account'])->name('users.account');
+    Route::get('/account', [UserController::class, 'Account'])->name('users.profile');
+    Route::get('/get/payment/{id}', [UserController::class, 'makePayment'])->name('users.course.pay');
 });
 
 
 //admin pages
+
+
 Route::prefix('dashboard')->group(function(){
     Route::get('/', [AdminController::class, 'Courses'])->name('admin.index'); 
     Route::get('/course/details/{id}', [AdminController::class, 'CourseDetails'])->name('admin.course.details');
