@@ -60,7 +60,7 @@
                               <div class="col-sm-6 col-md-4">
                                <div class="mc-teaching-item mc-item mc-item-2">
                         <div class="image-heading">
-                            <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
+                          <a href="{{route('course.details', encrypt($cos->id))}}">  <img src="{{asset('/frontend/images/blog/'.$cos->image)}}" alt=""> </a>
                         </div>
                         <div class="meta-categories"><a href="#">{{$cos->category->name}}</a></div>
                            <div class="content-item">
@@ -68,9 +68,7 @@
                                             <img src="images/avatar-1.jpg" alt="">
                                         </div>
                                         <h4><a href="{{route('course.details', encrypt($cos->id))}}">{{$cos->name}}</a></h4>
-                                        <div class="name-author">
-                                             <a href="{{route('course.details', encrypt($cos->id))}}">View Course</a>
-                                        </div>
+                                       
                                     </div>
                                     <div class="ft-item">
                                    <div class="view-info">
@@ -80,6 +78,9 @@
                                     <span class="price-old"> ₦{{number_format($cos->price,2)}}</span>
                                 </div>
                                     </div>
+                                     <div class="name-author">
+                                             <a href="{{route('course.details', encrypt($cos->id))}}">View Course</a>
+                                        </div>
 
                                  </div>
                             </div>  

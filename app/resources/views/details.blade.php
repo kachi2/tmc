@@ -31,7 +31,7 @@
                                    
                                 </div>
                                  <div class="image-heading">
-                                    <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
+                                    <img src="{{asset('/frontend/images/blog/'.$course->cover_image)}}" alt="">
                                 </div>
                             </div>
                             <div style="padding-bottom:20px"></div>

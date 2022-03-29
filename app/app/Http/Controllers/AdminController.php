@@ -47,9 +47,10 @@ class AdminController extends Controller
         $time = time().$FileName;
         $fileName = $time.'.'.$ext;
         $fileNam = "cover".$time.'.'.$ext;
-        Image::make(request()->file('image'))->resize(170, 170)->save('frontend/images/blog/'.$fileName);
+        Image::make(request()->file('image'))->resize(350, 170)->save('frontend/images/blog/'.$fileName);
         Image::make(request()->file('image'))->resize(400, 200)->save('frontend/images/blog/'.$fileNam);
         $course->image = $fileName;
+        $course->cover_image = $fileNam;
         }
 
         if($course->save()){
@@ -84,9 +85,10 @@ class AdminController extends Controller
         $time = time().$FileName;
         $fileName = $time.'.'.$ext;
         $fileNam = "cover".$time.'.'.$ext;
-        Image::make(request()->file('image'))->resize(170, 170)->save('frontend/images/blog/'.$fileName);
+        Image::make(request()->file('image'))->resize(350, 200)->save('frontend/images/blog/'.$fileName);
         Image::make(request()->file('image'))->resize(400, 200)->save('frontend/images/blog/'.$fileNam);
         $course->image = $fileName;
+        $course->cover_image = $fileNam;
         }
         if($course->save()){
           Session::flash('alert', 'success');
