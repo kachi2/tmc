@@ -15,7 +15,7 @@
                               <div class="col-sm-6 col-md-4">
                                <div class="mc-teaching-item mc-item mc-item-2">
                         <div class="image-heading">
-                            <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
+                            <img src="{{asset('/frontend/images/blog/'.$cos->image)}}" alt="">
                         </div>
                         <div class="meta-categories"><a href="#">{{$cos->category->name}}</a></div>
                         <div class="content-item">
