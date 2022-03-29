@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Providers;
 use Illuminate\Support\Facades\View;
 use App\Models\Category;
@@ -30,18 +29,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-                view()->composer('*', function($view){
+                // view()->composer('*', function($view){
 
-                    if(auth::check()){
-                    
+                //     if(auth::check()){
+                       
+                //     }
+                //     $view->with();
 
-                    }
-
-
-                    $view->with();
-
-                });
-               
+                // }); 
         
             $data = [
                 'Nav_enrollments' => Enrollment::get(),

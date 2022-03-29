@@ -67,6 +67,7 @@ class AdminController extends Controller
     }
     public function Update(Request $request, $id){
 
+       // dd($request->all());
         $course = Course::where('id', decrypt($id))->first();
         $course->name = $request->name;
         $course->category_id = $request->category;
@@ -92,6 +93,9 @@ class AdminController extends Controller
           Session::flash('msg', 'Course Updated Successfully');
           return back();
         }
+        Session::flash('alert', 'failed');
+        Session::flash('msg', 'Something went wrong, try again');
+        return back();
     }
 
     public function Category($id = null){
