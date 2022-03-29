@@ -157,7 +157,7 @@ let total_pay =  {!! json_encode($total)!!};
           var trx_id = response.transaction_id;
            console.log(response);
           $.ajax({
-              url: 'http://tmc.com/confirm/payment/'+trx_id,
+              url: 'http://tmc.com/confirm/payments/'+trx_id,
               method: 'get',
               success: function (response) {
                 // console.log(response);

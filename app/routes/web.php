@@ -34,8 +34,8 @@ Route::prefix('users')->group(function(){
     Route::get('/courses', [UserController::class, 'Courses'])->name('users.courses');
     Route::get('/account', [UserController::class, 'Account'])->name('users.profile');
     Route::get('/get/payment/{id}', [UserController::class, 'makePayment'])->name('users.course.pay');
-    Route::get('/confirm/payment/{id}', [UserController::class, 'confirmPayment'])->name('users.payment.confirm');
-    Route::get('/payment/confirmed/{id}', [UserController::class, 'PaymentConfirmed'])->name('payment.confirmed');
+    Route::get('/confirm/payments/{id}', [UserController::class, 'confirmPayment'])->name('users.payment.confirm');
+    Route::post('/payment/confirmed/{id}', [UserController::class, 'PaymentConfirmed'])->name('payment.confirmed');
 });
 
 

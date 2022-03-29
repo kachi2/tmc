@@ -66,8 +66,6 @@ class UserController extends Controller
                 //Give Value and return to Success page
                 $transactionRef = 'TNE-'.rand(1111111, 9999999);
                 $getUser = User::where('email', $custemail)->first();
-                $ownerNewBalance = $getUser->wallet + $chargeAmount;
-                User::where(['id' => $getUser->id])->update(['wallet' => $ownerNewBalance]);
                Transaction::create([
                     'user_id' => $getUser->id,
                     'payment_ref'=>$transactionRef,

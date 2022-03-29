@@ -55,18 +55,20 @@
                          <div class="col-md-9 col-md-push-3">
                     <div class="content grid">
                         <div class="row">
+                            <!-- ITEM -->
                             @foreach ($courses as $cos )
                               <div class="col-sm-6 col-md-4">
                                <div class="mc-teaching-item mc-item mc-item-2">
                         <div class="image-heading">
                           <a href="{{route('course.details', encrypt($cos->id))}}">  <img src="{{asset('/frontend/images/blog/'.$cos->image)}}" alt=""> </a>
                         </div>
-                        <div class="meta-categories"><a href="{{route('course.details', encrypt($cc->id))}}">{{$cos->category->name}}</a></div>
+                        <div class="meta-categories"><a href="#">{{$cos->category->name}}</a></div>
                            <div class="content-item">
                                         <div class="image-author">
                                             <img src="images/avatar-1.jpg" alt="">
                                         </div>
                                         <h4><a href="{{route('course.details', encrypt($cos->id))}}">{{$cos->name}}</a></h4>
+                                       
                                     </div>
                                     <div class="ft-item">
                                    <div class="view-info">
@@ -76,6 +78,7 @@
                                     <span class="price-old"> ₦{{number_format($cos->price,2)}}</span>
                                 </div>
                                     </div>
+
                                  </div>
                             </div>  
                             @endforeach
