@@ -14,7 +14,7 @@ class AdminController extends Controller
     //
 
     public function Courses(){
-        $courses = Course::get();
+        $courses = Course::latest()->get();
         return view('admin.index', compact('courses', $courses));
 
     }
