@@ -240,7 +240,7 @@
                     <!-- MC ITEM -->
                     <div class="mc-item mc-item-2">
                         <div class="image-heading">
-                            <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
+                            <img src="{{asset('/frontend/images/feature/blog/'.$rr->image)}}" alt="">
                         </div>
                         <div class="meta-categories"><a href="#">{{$rr->category->name}}</a></div>
                         <div class="content-item">

@@ -148,7 +148,7 @@
                   @foreach ($course as $cc)
                         <div class="mc-item mc-item-1">
                             <div class="image-heading">
-                                <img src="{{asset('/frontend/images/feature/img-1.jpg')}}" alt="">
+                                <img src="{{asset('/frontend/images/blog/'.$cc->image)}}" alt="">
                             </div>
                             <div class="meta-categories"><a href="#">{{$cc->category->name}}</a></div>
                             <div class="content-item">
