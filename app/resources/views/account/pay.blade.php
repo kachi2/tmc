@@ -5,12 +5,14 @@
         <div class="awe-static bg-sub-banner-course"></div>
         <div class="container">
             <div class="sub-banner-content">
-                <h2 class="text-center">{{$course->name}}</h2>
+                <h2 class="text-center">{{$enrol->course->name}}</h2>
             </div>
         </div>
     </section>
 
     <!-- COURSE -->
+    <form action="{{route('payment.confirmed', $enrol->id)}}" method="post" id="form1"> 
+@csrf
     <section class="course-top">
         <div class="container">
             <div class="row">
@@ -19,7 +21,7 @@
                         <div class="breadcrumb">
                             <a href="#">Home</a> / 
                             <a href="#">Course</a> / 
-                            {{$course->name}}
+                            {{$enrol->course->name}}
                         </div>   
                         <div class="video-course-intro">
                             <div class="inner">
@@ -27,18 +29,19 @@
                                     <div class="img-thumb">
                                         <img src="images/thumb-intro.jpg" alt="">
                                     </div>
-                                    
-                                   
                                 </div>
                                  <div class="image-heading">
-                                    <img src="{{asset('/frontend/images/blog/'.$course->cover_image)}}" alt="">
+                                    <img src="{{asset('/frontend/images/blog/'.$enrol->course->cover_image)}}" alt="">
                                 </div>
                             </div>
                             <div style="padding-bottom:20px"></div>
                             <div class="price">
-                                 N{{number_format($course->discount,2)}}
+                                 N{{number_format($enrol->course->discount,2)}}
                              </div>
-                            <a href="#" class="take-this-course mc-btn btn-style-1">Pay Now</a>
+                             <form>
+                            <script src="https://checkout.flutterwave.com/v3.js"></script>
+                            <button type="button"  onClick="makePayment()" id="btnsubmit2" class="btn btn-primary btn-lg w-100">Pay Now</button>
+                            </form>
                         </div>
                     </div>
                 </div>    
@@ -54,7 +57,7 @@
                             <!-- INTRODUCTION -->
                             <div class="tab-pane fade in active" id="introduction">
                                 <h4 class="sm black bold">Introduction</h4>
-                                <p>{!! $course->description !!}</p>
+                                <p>{!! $enrol->course->description !!}</p>
                                 </div>
                             <!-- END / INTRODUCTION -->
     
@@ -69,7 +72,7 @@
                                             <div class="count"></div>
                                             <div class="list-body">
                                                 <i class="icon md-eye"></i>
-                                                <p>{!! $course->outline !!}</p>  
+                                                <p>{!! $enrol->course->outline !!}</p>  
                                             </div>
                                             
                                         </li>
@@ -86,7 +89,7 @@
                                             <div class="count"></div>
                                             <div class="list-body">
                                                 <i class="icon md-eye"></i>
-                                                <p>{!! $course->duration !!}</p>  
+                                                <p>{!! $enrol->course->duration !!}</p>  
                                             </div>
                                             
                                         </li>
@@ -111,6 +114,7 @@
             </div>
         </div>
     </section>
+    </form>
     <!-- END / COURSE TOP -->
 
     
@@ -118,20 +122,66 @@
     
 
 @endsection
-
 @section('scripts')
 <script>
-let msg = {!!  json_encode(Session::get('msg'))!!}
-let alert = {!! json_encode(Session::get('alert')) !!}
-if(msg){
 
-Swal.fire({
-    'title': alert,
-    'icon': alert,
-    'text': msg
-});
-}
+var _token = {!! json_encode(config('app.FLUTTERWAVE_KEY')) !!};
+let email = {!! json_encode($email) !!};
+let phone = {!! json_encode('0802783737') !!};
+let name = {!! json_encode($name)!!};
+let total_pay =  {!! json_encode($total)!!};
 
+  function makePayment() {
+    FlutterwaveCheckout({
+      public_key: _token,
+      tx_ref: "TMC"+Math.floor((Math.random() * 1000000) + 1),
+      amount: 1000,
+      currency: "NGN",
+      country: "NG",
+      payment_options: "card, ussd",
+     // redirect_url: // specified redirect URL
+       // https://callbacks.piedpiper.com/flutterwave.aspx?ismobile=34",
+      meta: {
+        consumer_id: 1,
+        consumer_mac: "92a3-912ba-1192a",
+        purpose: "Payment for Courses",
+        
+      },
+      customer: {
+        email: email,
+        phone_number: phone,
+        name: name,
+      },
+      
+       callback: function (response) {
+          var trx_id = response.transaction_id;
+           console.log(response);
+          $.ajax({
+              url: 'http://tmc.com/confirm/payment/'+trx_id,
+              method: 'get',
+              success: function (response) {
+                // console.log(response);
+                // the transaction status is in response.data.status
+                var data = $.parseJSON(response);
+                console.log(data);
+                var iamount = parseFloat(data.data.amount);
+                if(data.data.status == 'successful' ){
+                        $('#form1').submit(); 
+                }
+            },
+      });
+      },
+      onclose: function() {
+        // close modal
+      },
+      customizations: {
+        title: "TMC Institue",
+        description: "Payment for Courses",
+       logo: "http://tmc.com/frontend/images/logo.jpg",
+      },
+    });
+  };
+  
 </script>
 
 @endsection

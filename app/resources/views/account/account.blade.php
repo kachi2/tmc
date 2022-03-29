@@ -17,7 +17,7 @@
                     <div class="tab-pane fade in active" id="mysubmissions">
                         <div class="table-wrap">
                             <!-- TABLE HEAD -->
-                            <div class="table-head">
+                            <div class="table-head" style="color:#000">
                                 <div class="total-subm">Course </div>
                                 <div class="total-subm">No of Trainee</div>
                                 <div class="total-subm">Course Price</div>
@@ -32,16 +32,14 @@
                                 <!-- TABLE ITEM -->
                                 @foreach ($enrollment  as $enrol)
                                      <div class="table-item">
-                                    <div class="thead">
+                                    <div class="tbody">
                                         <div class="total-subm"><a href="#">{{$enrol->course->name}}</a></div>
                                         <div class="total-subm">{{$enrol->candidates}}</div>
                                            <div class="total-subm">₦{{number_format($enrol->course->discount)}}</div>
                                         <div class="total-subm">₦{{number_format($enrol->course->discount * $enrol->candidates)}} </div>
                                            <div class="total-subm">@if($enrol->is_paid == 1) Paid @else pending @endif</div>
-                                               <div class="total-subm" > @if($enrol->is_paid == 1) {{$enrol->paid_date}} @else 
-                                               <form>
-                                               <button type="submit" style="color:#fff" target="_blank" class="btn btn-primary"> Pay Now </button> @endif</div> 
-                                            </form>
+                                               <div class="total-subm" > @if($enrol->is_paid == 1) {{$enrol->paid_date}} @else <a href="{{route('users.course.pay',encrypt($enrol->id))}}" style="color:#fff" target="_blank" class="btn btn-primary"> Pay Now </a> @endif</div> 
+                                        
                                     </div>
 
                                 </div>
