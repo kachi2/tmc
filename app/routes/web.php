@@ -19,7 +19,7 @@ use App\Http\Controllers\AccountController;
 Route::get('/about-us', [HomeController::class, 'About'])->name('about-us');
 Route::get('/contact-us', [HomeController::class, 'Contact'])->name('contact-us');
 Route::post('/tmc/contact-us', [HomeController::class, 'Contacts'])->name('contactUs');
-Route::get('/index', [HomeController::class, 'Index'])->name('index');
+Route::get('/index', [HomeController::class, 'Index'])->name('users.index');
 Route::get('/', [HomeController::class, 'Index'])->name('index');
 Route::get('/courses', [HomeController::class, 'Courses'])->name('courses');
 Route::get('/course/details/{id}', [HomeController::class, 'CourseDetails'])->name('course.details');
@@ -34,7 +34,7 @@ Route::prefix('users')->group(function(){
     Route::get('/courses', [UserController::class, 'Courses'])->name('users.courses');
     Route::get('/account', [UserController::class, 'Account'])->name('users.profile');
     Route::get('/get/payment/{id}', [UserController::class, 'makePayment'])->name('users.course.pay');
-    Route::get('/confirm/payments/{id}', [UserController::class, 'confirmPayment'])->name('users.payment.confirm');
+    Route::get('/confirm/payment/{id}', [UserController::class, 'confirmPayment'])->name('users.payment.confirm');
     Route::post('/payment/confirmed/{id}', [UserController::class, 'PaymentConfirmed'])->name('payment.confirmed');
 });
 

@@ -15,9 +15,13 @@ class UserController extends Controller
     public function __construct()
     {
         $this->API_Token = 'FLWSECK_TEST-b754b22c91f541503f75b0d74d29a034-X';
+        
     }
 
     public function Courses(){
+        if(auth()->user()->is_admin == 1){
+            return redirect()->route('admin.index');
+        }
         $enrollment = Enrollment::where('user_id', auth()->user()->id)->get();
         return view('account.account', compact('enrollment', $enrollment));
     }

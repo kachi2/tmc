@@ -43,12 +43,12 @@
                        My Courses
                     </a>
                 </li> 
-                <li>
-                    <a href="{{route('users.profile')}}">
-                        <i class="icon md-user-minus"></i>
-                        Profile
-                    </a>
-                </li>
+                <!--<li>-->
+                <!--    <a href="{{route('users.profile')}}">-->
+                <!--        <i class="icon md-user-minus"></i>-->
+                <!--        Profile-->
+                <!--    </a>-->
+                <!--</li>-->
             </ul>
         </div>
     </section>

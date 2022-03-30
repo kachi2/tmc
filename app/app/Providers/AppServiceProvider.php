@@ -34,8 +34,9 @@ class AppServiceProvider extends ServiceProvider
                        $datas['user_courses'] = Enrollment::where('user_id', auth()->user()->id)->get();
                        $datas['paid_courses'] = Enrollment::where(['user_id' => auth()->user()->id, 'is_paid'=>1])->get();
                        $datas['pending_payment'] = Enrollment::where(['user_id' => auth()->user()->id, 'is_paid'=>0])->get();
+                        $view->with($datas);
                     }
-                    $view->with($datas);
+                   
 
                 }); 
         

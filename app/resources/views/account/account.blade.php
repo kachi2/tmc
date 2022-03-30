@@ -30,20 +30,28 @@
                             <!-- TABLE BODY -->
                             <div class="table-body">
                                 <!-- TABLE ITEM -->
+                                @if(count($enrollment) > 0)
                                 @foreach ($enrollment  as $enrol)
-                                     <div class="table-item">
+                                     <div class="table-item" style="background:#fff">
                                     <div class="tbody">
                                         <div class="total-subm"><a href="#">{{$enrol->course->name}}</a></div>
                                         <div class="total-subm">{{$enrol->candidates}}</div>
                                            <div class="total-subm">₦{{number_format($enrol->course->discount)}}</div>
                                         <div class="total-subm">₦{{number_format($enrol->course->discount * $enrol->candidates)}} </div>
-                                           <div class="total-subm">@if($enrol->is_paid == 1) Paid @else pending @endif</div>
+                                           <div class="total-subm">@if($enrol->is_paid == 1) <span class="btn btn-success">Paid</span> @else <span class="btn-outline-warning"> pending</span> @endif</div>
                                                <div class="total-subm" > @if($enrol->is_paid == 1) {{$enrol->paid_date}} @else <a href="{{route('users.course.pay',encrypt($enrol->id))}}" style="color:#fff" target="_blank" class="btn btn-primary"> Pay Now </a> @endif</div> 
-                                        
                                     </div>
 
                                 </div>
                                 @endforeach
+                                @else
+                                
+                                    <div class="table-item">
+                                    <div class="tbody">
+                                    </div>
+
+                                </div>
+                                @endif
                                
                                 <!-- END / TABLE ITEM -->
 

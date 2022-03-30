@@ -11,7 +11,7 @@
     </section>
 
     <!-- COURSE -->
-    <form action="{{route('payment.confirmed', $enrol->id)}}" method="post" id="form1"> 
+    <form action="{{route('payment.confirmed', encrypt($enrol->id))}}" method="post" id="form1"> 
 @csrf
     <section class="course-top">
         <div class="container">
@@ -125,7 +125,7 @@
 @section('scripts')
 <script>
 
-var _token = {!! json_encode(config('app.FLUTTERWAVE_KEY')) !!};
+let _token = {!! json_encode(config('app.FLUTTERWAVE_KEY')) !!};
 let email = {!! json_encode($email) !!};
 let phone = {!! json_encode('0802783737') !!};
 let name = {!! json_encode($name)!!};
@@ -157,7 +157,7 @@ let total_pay =  {!! json_encode($total)!!};
           var trx_id = response.transaction_id;
            console.log(response);
           $.ajax({
-              url: 'http://tmc.com/confirm/payments/'+trx_id,
+              url: 'https://dev.tmcinstitute.com/users/confirm/payment/'+trx_id,
               method: 'get',
               success: function (response) {
                 // console.log(response);
@@ -177,7 +177,7 @@ let total_pay =  {!! json_encode($total)!!};
       customizations: {
         title: "TMC Institue",
         description: "Payment for Courses",
-       logo: "http://tmc.com/frontend/images/logo.jpg",
+       logo: "https://dev.tmcinstitute.com/frontend/images/logo.jpg",
       },
     });
   };
